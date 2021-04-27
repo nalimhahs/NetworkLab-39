@@ -5,25 +5,25 @@
 
 typedef struct Arg
 {
-    int beg;
+    int start;
     int end;
-    int *ar;
+    int *array;
 }arr;
 
 void *sort(void *ptr)
 {
     arr *arg_ptr = (arr *)ptr;
     int temp;
-    for (int i = arg_ptr->beg; i <= arg_ptr->end - 1; i++)
+    for (int i = arg_ptr->start; i <= arg_ptr->end - 1; i++)
     {
-        for (int j = arg_ptr->beg; j <= (arg_ptr->end + arg_ptr->beg - i - 1); j++)
+        for (int j = arg_ptr->start; j <= (arg_ptr->end + arg_ptr->start - i - 1); j++)
         {
-            if (arg_ptr->ar[j] > arg_ptr->ar[j + 1])
+            if (arg_ptr->array[j] > arg_ptr->array[j + 1])
             {
 
-                temp = arg_ptr->ar[j];
-                arg_ptr->ar[j] = arg_ptr->ar[j + 1];
-                arg_ptr->ar[j + 1] = temp;
+                temp = arg_ptr->array[j];
+                arg_ptr->array[j] = arg_ptr->array[j + 1];
+                arg_ptr->array[j + 1] = temp;
             }
         }
     }
@@ -46,12 +46,12 @@ void main()
         scanf("%d", &ar[i]);
     }
 
-    obj1.beg = 0;
+    obj1.start = 0;
     obj1.end = n / 2 - 1;
-    obj1.ar = ar;
-    obj2.beg = n / 2;
+    obj1.array = ar;
+    obj2.start = n / 2;
     obj2.end = n - 1;
-    obj2.ar = ar;
+    obj2.array = ar;
 
     pthread_create(&t1, NULL, &sort, (void *)&obj1);
     pthread_create(&t2, NULL, &sort, (void *)&obj2);
