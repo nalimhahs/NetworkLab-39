@@ -17,9 +17,9 @@ void displayDetails(Student *s_details, int n)
 {
     for (int i = 0; i < n; i++)
     {
-        printf("\nStudent no: %d\n", i + 1);
+        printf("\nRank: %d\n", i + 1);
         printf("Name: %s\n", s_details[i].name);
-        printf("Rank: %d\n", s_details[i].rank);
+        printf("Mark: %d\n", s_details[i].rank);
     }
 }
 
@@ -44,7 +44,7 @@ void bubbleSort(Student *s_details, int n)
     {
         for (j = 0; j < n - i - 1; j++)
         {
-            if (s_details[j].rank > s_details[j + 1].rank)
+            if (s_details[j].rank < s_details[j + 1].rank)
             {
                 swap(&s_details[j], &s_details[j + 1]);
             }

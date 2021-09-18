@@ -15,7 +15,7 @@ char *itoa(int num)
 int main()
 {
     int fd1[2], fd2[2];
-    char str[] = "Hello world. Voluptate minim esse amet proident minim duis. \n Voluptate minim esse amet proident minim duis.";
+    char str[] = "This is line one.\n This is line two.\n This is line three.";
 
     pid_t p;
     pipe(fd1);
@@ -60,7 +60,9 @@ int main()
                 c++;
             }
         }
-
+        l++;
+        w++;
+        c--;
         write(fd2[1], itoa(c), 10);
         write(fd2[1], itoa(w), 10);
         write(fd2[1], itoa(l), 10);

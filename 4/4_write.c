@@ -38,7 +38,7 @@ void main()
         printf("\nDetails of Student %d\n", i);
         printf("Enter name: ");
         scanf("%s", studs[i].name);
-        printf("Enter rank: ");
+        printf("Enter Mark: ");
         scanf("%d", &studs[i].rank);
         studs[i].count = n;
     }

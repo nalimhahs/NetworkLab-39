@@ -15,10 +15,12 @@ int main()
     pipe(fd2);
 
     printf("Enter string: ");
-    scanf("%s", str1);
+    // scanf("%[^\n]s", str1);
+    fgets(str1, 50, stdin);
 
     printf("Enter string to concat to: ");
-    scanf("%s", str2);
+    fgets(str2, 50, stdin);
+    // scanf("%[^\n]s", str2);
 
     p = fork();
 
