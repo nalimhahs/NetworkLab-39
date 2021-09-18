@@ -92,7 +92,7 @@ void main()
         read(toA0[0], arr, sizeof(arr));
         close(toA0[0]);
         sort(arr, arr[0], 1);
-        printf("\nLargest of mod 0: %d", arr[arr[0]]);
+        //printf("\nLargest of mod 0: %d", arr[arr[0]]);
         write(fromA0[1], arr, sizeof(arr));
         close(fromA0[1]);
         exit(0);
@@ -106,7 +106,7 @@ void main()
             read(toA1[0], arr, sizeof(arr));
             close(toA1[0]);
             sort(arr, arr[0], 1);
-            printf("\nLargest of mod 1: %d", arr[arr[0]]);
+            //printf("\nLargest of mod 1: %d", arr[arr[0]]);
             write(fromA1[1], arr, sizeof(arr));
             close(fromA1[1]);
         }
@@ -119,7 +119,7 @@ void main()
                 read(toA2[0], arr, sizeof(arr));
                 close(toA2[0]);
                 sort(arr, arr[0], 1);
-                printf("\nLargest of mod 2: %d", arr[arr[0]]);
+                //printf("\nLargest of mod 2: %d", arr[arr[0]]);
                 write(fromA2[1], arr, sizeof(arr));
                 close(fromA2[1]);
             }
@@ -136,6 +136,9 @@ void main()
                 read(fromA2[0], a2, sizeof(a2));
                 close(fromA2[0]);
                 printf("\nRead complete!");
+                printf("\nLargest of mod 0: %d", a0[a0[0]]);
+                printf("\nLargest of mod 1: %d", a1[a1[0]]);
+                printf("\nLargest of mod 2: %d", a2[a2[0]]);
                 int arr[20], k = 0;
                 for (int i = 1; i < a0[0] + 1; i++)
                 {
